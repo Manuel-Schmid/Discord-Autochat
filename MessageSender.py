@@ -1,4 +1,5 @@
 import requests
+import time
 
 # https://discord.com/api/v9/channels/700261153690877976/messages
 
@@ -7,7 +8,12 @@ payload = {
 }
 
 header = {
-    'authorization': 'token goes here'
+    'authorization': 'auth goes here'
 }
 
-r = requests.post("https://discord.com/api/v9/channels/700261153690877976/messages", data=payload, headers=header)
+for i in range(5):
+    payload = {
+        'content': "hello world " + str(i + 1)
+    }
+    r = requests.post("https://discord.com/api/v9/channels/700261153690877976/messages", data=payload, headers=header)
+    time.sleep(2)  # 3 second delay
