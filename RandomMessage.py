@@ -8,7 +8,7 @@ querystring = {"message": prevMsg, "uid": ":)"}
 
 headers = {
     'x-rapidapi-host': "ai-chatbot.p.rapidapi.com",
-    'x-rapidapi-key': "api key goes here"
+    'x-rapidapi-key': "key goes here"
 }
 
 response = requests.request("GET", url, headers=headers, params=querystring)
